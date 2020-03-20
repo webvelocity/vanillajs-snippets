@@ -42,3 +42,10 @@ function toggleHeaderMenu() {
 		}, 325)
 	}
 }
+
+// TODO FINISH DROP-DOWN CONVERSION TO VANILLA
+jQuery(document).ready(function (e) {
+    e(".menu-item a").click(function () {
+        e(this).closest("li").children("ul").length && (e(this).closest(".chevron>a:first-of-type:after").display = "none", e(this).closest("li").children("ul").toggleClass("active"), e(this).closest("li").children("ul").slideToggle(300))
+    })
+}); 
