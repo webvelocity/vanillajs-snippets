@@ -43,6 +43,13 @@ function toggleHeaderMenu() {
 	}
 }
 
+
+//Check if Jquery is loaed
+                        window.onload = function() {
+                                if (window.jQuery) {
+    				  // jquery loaded
+                                }
+                            }
 // TODO FINISH DROP-DOWN CONVERSION TO VANILLA
 jQuery(document).ready(function (e) {
     e(".menu-item a").click(function () {
