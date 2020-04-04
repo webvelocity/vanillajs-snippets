@@ -56,3 +56,8 @@ jQuery(document).ready(function (e) {
         e(this).closest("li").children("ul").length && (e(this).closest(".chevron>a:first-of-type:after").display = "none", e(this).closest("li").children("ul").toggleClass("active"), e(this).closest("li").children("ul").slideToggle(300))
     })
 }); 
+
+// Check user agent
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){// some code..}
+
+
