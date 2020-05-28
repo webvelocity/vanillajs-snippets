@@ -1,27 +1,35 @@
-                    (function matchHeight(){
-  //Grab divs with the class name 'match-height'
-  var ref = document.querySelector('.bame').offsetHeight;
-  var getDivs = document.getElementsByClassName('mh');
+        var ref = document.querySelector('.bame').offsetHeight;
+        //Grab divs with the class name 'match-height'
+        var getDivs = document.getElementsByClassName('mh');
+        //Media query 'match-height'
+        var mq = window.matchMedia("(min-width: 1200px)");
 
-  //Find out how my divs there are with the class 'match-height' 
-  var arrayLength = getDivs.length;
-  var heights = [];
+        window.addEventListener('DOMContentLoaded', (event) => {
+            matchHeight();
+        });
 
-  //Create a loop that iterates through the getDivs variable and pushes the heights of the divs into an empty array
-  for (var i = 0; i < arrayLength; i++) {
-      heights.push(getDivs[i].offsetHeight);
-  }
+        window.addEventListener('resize', function (event) {
+            obj = Array.prototype.slice.call(getDivs);
+            obj.forEach(el => {
+                console.log(el.style.height)
+                el.style.height = "auto";
+            });
+            matchHeight();
+        });
 
-   //Find the largest of the divs
-//   function getHighest() {
-//     return Math.max(...heights);
-//   }
 
-//   //Set a variable equal to the tallest div
-//   var tallest = getHighest();
-
-  //Iterate through getDivs and set all their height style equal to the tallest variable
-  for (var i = 0; i < getDivs.length; i++) {
-      getDivs[i].style.height = (ref / 2) + "px";
-  }
-})();
+        function matchHeight() {
+            if (mq.matches) {
+                //Find out how my divs there are with the class 'match-height' 
+                var arrayLength = getDivs.length;
+                var heights = [];
+                //Create a loop that iterates through the getDivs variable and pushes the heights of the divs into an empty array
+                for (var i = 0; i < arrayLength; i++) {
+                    heights.push(getDivs[i].offsetHeight);
+                }
+                //Iterate through getDivs and set all their height style equal to the ref variable
+                for (var i = 0; i < getDivs.length; i++) {
+                    getDivs[i].style.height = (ref / 2) + "px";
+                }
+            }
+        };
