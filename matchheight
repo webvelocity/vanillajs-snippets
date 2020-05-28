@@ -4,7 +4,7 @@
         //Media query 'match-height'
         var mq = window.matchMedia("(min-width: 1200px)");
 
-        //Recalculate height on screen resize
+        //Load on body load
         window.addEventListener('DOMContentLoaded', (event) => {
             matchHeight();
         });
