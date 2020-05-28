@@ -1,13 +1,14 @@
-        var ref = document.querySelector('.bame').offsetHeight;
+  var ref = document.querySelector('.bame').offsetHeight;
         //Grab divs with the class name 'match-height'
         var getDivs = document.getElementsByClassName('mh');
         //Media query 'match-height'
         var mq = window.matchMedia("(min-width: 1200px)");
 
+        //Recalculate height on screen resize
         window.addEventListener('DOMContentLoaded', (event) => {
             matchHeight();
         });
-
+        //Recalculate height on screen resize
         window.addEventListener('resize', function (event) {
             obj = Array.prototype.slice.call(getDivs);
             obj.forEach(el => {
@@ -16,8 +17,7 @@
             });
             matchHeight();
         });
-
-
+        
         function matchHeight() {
             if (mq.matches) {
                 //Find out how my divs there are with the class 'match-height' 
