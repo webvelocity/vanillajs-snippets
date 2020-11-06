@@ -60,4 +60,9 @@ jQuery(document).ready(function (e) {
 // Check user agent
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){// some code..}
 
+	
+	
+//Split Number into array	
+var n =  12;
+var digits = (""+n).split("");
 
