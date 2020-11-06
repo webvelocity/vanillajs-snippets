@@ -65,4 +65,11 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 //Split Number into array	
 var n =  12;
 var digits = (""+n).split("");
+	 //OR
+	            function numberToArray(number) {
+                  let array = number.toString().split("");//stringify the number, then make each digit an item in an array
+                  return array.map(x => '<span>'+parseInt(x)+'</span>');//convert all the items back into numbers
+            }
+
+
 
