@@ -1,0 +1,12 @@
+elems = document.querySelectorAll('.tag-new');
+
+
+elems.forEach(element => {
+
+    var para = document.createElement("span");
+    var node = document.createTextNode("New");
+    para.appendChild(node);
+    para.classList.add("featured_new_tag");
+    element.appendChild(para);
+
+});
